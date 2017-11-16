@@ -13,7 +13,7 @@
 		0733BCD41FBD358600C5FAFF /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0733BCD21FBD358600C5FAFF /* Todo.xcdatamodeld */; };
 		0733BCD61FBD358600C5FAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0733BCD51FBD358600C5FAFF /* Assets.xcassets */; };
 		0733BCD91FBD358600C5FAFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0733BCD71FBD358600C5FAFF /* LaunchScreen.storyboard */; };
-		0733BCE41FBD358600C5FAFF /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733BCE31FBD358600C5FAFF /* TodoTests.swift */; };
+		0733BCEF1FBD362F00C5FAFF /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733BCEE1FBD362F00C5FAFF /* TodoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 		0733BCD81FBD358600C5FAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0733BCDA1FBD358600C5FAFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0733BCDF1FBD358600C5FAFF /* TodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0733BCE31FBD358600C5FAFF /* TodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTests.swift; sourceTree = "<group>"; };
 		0733BCE51FBD358600C5FAFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0733BCEE1FBD362F00C5FAFF /* TodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodoTests.swift; path = Model/TodoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +93,8 @@
 		0733BCE21FBD358600C5FAFF /* TodoTests */ = {
 			isa = PBXGroup;
 			children = (
-				0733BCE31FBD358600C5FAFF /* TodoTests.swift */,
 				0733BCE51FBD358600C5FAFF /* Info.plist */,
+				0733BCEE1FBD362F00C5FAFF /* TodoTests.swift */,
 			);
 			path = TodoTests;
 			sourceTree = "<group>";
@@ -153,6 +153,7 @@
 					};
 					0733BCDE1FBD358600C5FAFF = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0733BCC71FBD358600C5FAFF;
 					};
@@ -212,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0733BCE41FBD358600C5FAFF /* TodoTests.swift in Sources */,
+				0733BCEF1FBD362F00C5FAFF /* TodoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,12 +389,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5BNBJ8P4NB;
 				INFOPLIST_FILE = TodoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dsk.TodoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Todo.app/Todo";
@@ -405,6 +408,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5BNBJ8P4NB;
 				INFOPLIST_FILE = TodoTests/Info.plist;
