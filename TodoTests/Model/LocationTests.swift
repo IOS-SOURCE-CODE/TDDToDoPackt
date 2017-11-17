@@ -16,11 +16,9 @@ class LocationTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
@@ -48,11 +46,11 @@ class LocationTests: XCTestCase {
     
     func test_Location_WhenLongitudeDiffers_AreNotEqual() {
         
-        performNotEqualTestWith(firstName: "Foo", secondName: "Foo", firstLongLat: (1.0, 0.0), secondLongLat: (0.0,0.0), line: 55)
+        performNotEqualTestWith(firstName: "Foo", secondName: "Foo", firstLongLat: (1.0, 0.0), secondLongLat: nil)
         
     }
     
-    func performNotEqualTestWith(firstName:String, secondName:String, firstLongLat:(Double,Double)?,secondLongLat:(Double, Double)?, line:UInt ) {
+    func performNotEqualTestWith(firstName:String, secondName:String, firstLongLat:(Double,Double)?,secondLongLat:(Double, Double)?, line:UInt = #line) {
         
         var firstCoord: CLLocationCoordinate2D? = nil
         if let firstLongLat = firstLongLat {
@@ -67,6 +65,13 @@ class LocationTests: XCTestCase {
         let secondLocation = Location(name: secondName, coordinate: secondCoord)
         
         XCTAssertNotEqual(firstLocation, secondLocation, line: line)
+    }
+    
+    func test_Locations_WhenNamesDiffer_AreNotEqual() {
+        
+        performNotEqualTestWith(firstName: "Foo", secondName: "Bar", firstLongLat: nil, secondLongLat: nil)
+        
+        
     }
     
 }

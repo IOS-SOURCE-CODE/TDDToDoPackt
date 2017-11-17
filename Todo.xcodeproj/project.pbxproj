@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07090F911FBE8F19006121E8 /* ItemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07090F901FBE8F19006121E8 /* ItemListViewControllerTest.swift */; };
+		07090F931FBE9049006121E8 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07090F921FBE9049006121E8 /* ItemListViewController.swift */; };
+		07090F951FBE95CE006121E8 /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07090F941FBE95CE006121E8 /* ItemListDataProvider.swift */; };
+		07090F971FBE9E14006121E8 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07090F961FBE9E14006121E8 /* ItemListDataProviderTests.swift */; };
 		0733BCCC1FBD358600C5FAFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733BCCB1FBD358600C5FAFF /* AppDelegate.swift */; };
-		0733BCCE1FBD358600C5FAFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0733BCCD1FBD358600C5FAFF /* ViewController.swift */; };
 		0733BCD11FBD358600C5FAFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0733BCCF1FBD358600C5FAFF /* Main.storyboard */; };
 		0733BCD41FBD358600C5FAFF /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0733BCD21FBD358600C5FAFF /* Todo.xcdatamodeld */; };
 		0733BCD61FBD358600C5FAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0733BCD51FBD358600C5FAFF /* Assets.xcassets */; };
@@ -32,9 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07090F901FBE8F19006121E8 /* ItemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemListViewControllerTest.swift; path = Controller/ItemListViewControllerTest.swift; sourceTree = "<group>"; };
+		07090F921FBE9049006121E8 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemListViewController.swift; path = Controller/ItemListViewController.swift; sourceTree = "<group>"; };
+		07090F941FBE95CE006121E8 /* ItemListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemListDataProvider.swift; path = Controller/ItemListDataProvider.swift; sourceTree = "<group>"; };
+		07090F961FBE9E14006121E8 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemListDataProviderTests.swift; path = Controller/ItemListDataProviderTests.swift; sourceTree = "<group>"; };
 		0733BCC81FBD358600C5FAFF /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0733BCCB1FBD358600C5FAFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0733BCCD1FBD358600C5FAFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0733BCD01FBD358600C5FAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0733BCD31FBD358600C5FAFF /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
 		0733BCD51FBD358600C5FAFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,13 +96,14 @@
 			isa = PBXGroup;
 			children = (
 				0733BCCB1FBD358600C5FAFF /* AppDelegate.swift */,
-				0733BCCD1FBD358600C5FAFF /* ViewController.swift */,
 				0733BCCF1FBD358600C5FAFF /* Main.storyboard */,
 				0733BCD51FBD358600C5FAFF /* Assets.xcassets */,
 				0733BCD71FBD358600C5FAFF /* LaunchScreen.storyboard */,
 				0733BCDA1FBD358600C5FAFF /* Info.plist */,
 				0733BCD21FBD358600C5FAFF /* Todo.xcdatamodeld */,
-				077B90F81FBD48D4007E1279 /* Models */,
+				077B90F81FBD48D4007E1279 /* Model */,
+				07090F921FBE9049006121E8 /* ItemListViewController.swift */,
+				07090F941FBE95CE006121E8 /* ItemListDataProvider.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -105,29 +112,31 @@
 			isa = PBXGroup;
 			children = (
 				0733BCE51FBD358600C5FAFF /* Info.plist */,
-				077B90F91FBD48E4007E1279 /* Models */,
+				077B90F91FBD48E4007E1279 /* Model */,
+				07090F901FBE8F19006121E8 /* ItemListViewControllerTest.swift */,
+				07090F961FBE9E14006121E8 /* ItemListDataProviderTests.swift */,
 			);
 			path = TodoTests;
 			sourceTree = "<group>";
 		};
-		077B90F81FBD48D4007E1279 /* Models */ = {
+		077B90F81FBD48D4007E1279 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0733BCF01FBD387000C5FAFF /* ToDoItem.swift */,
 				077B90F01FBD43CD007E1279 /* Location.swift */,
 				077B90F61FBD48CB007E1279 /* ItemManager.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		077B90F91FBD48E4007E1279 /* Models */ = {
+		077B90F91FBD48E4007E1279 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0733BCEE1FBD362F00C5FAFF /* TodoTests.swift */,
 				077B90F21FBD4565007E1279 /* LocationTests.swift */,
 				077B90F41FBD4819007E1279 /* ItemManagerTests.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +243,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0733BCCE1FBD358600C5FAFF /* ViewController.swift in Sources */,
+				07090F931FBE9049006121E8 /* ItemListViewController.swift in Sources */,
+				07090F951FBE95CE006121E8 /* ItemListDataProvider.swift in Sources */,
 				0733BCD41FBD358600C5FAFF /* Todo.xcdatamodeld in Sources */,
 				077B90F11FBD43CD007E1279 /* Location.swift in Sources */,
 				0733BCF11FBD387000C5FAFF /* ToDoItem.swift in Sources */,
@@ -247,8 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07090F971FBE9E14006121E8 /* ItemListDataProviderTests.swift in Sources */,
 				077B90F51FBD4819007E1279 /* ItemManagerTests.swift in Sources */,
 				077B90F31FBD4565007E1279 /* LocationTests.swift in Sources */,
+				07090F911FBE8F19006121E8 /* ItemListViewControllerTest.swift in Sources */,
 				0733BCEF1FBD362F00C5FAFF /* TodoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
