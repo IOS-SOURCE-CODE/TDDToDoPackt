@@ -14,14 +14,20 @@ class ItemListDataProviderTests: XCTestCase {
     
     var sut: ItemListDataProvider!
     var tableView: UITableView!
+    var controller: ItemListViewController!
     
     override func setUp() {
         super.setUp()
         
         sut = ItemListDataProvider()
-        tableView = UITableView()
-        tableView.dataSource = sut
         sut.itemManager = ItemManager()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        controller = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
+        _ = controller.view
+        
+        tableView = controller.tableView
+        tableView.dataSource = sut
     }
     
     override func tearDown() {
@@ -60,4 +66,52 @@ class ItemListDataProviderTests: XCTestCase {
          XCTAssertEqual(tableView.numberOfRows(inSection: 1), 2)
     }
     
+    func test_CellForRow_ReturnItemCell() {
+        sut.itemManager?.add(ToDoItem(title: "Foo"))
+        tableView.reloadData()
+        
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(cell is ItemCell)
+    }
+    
 }
+
+extension ItemListDataProviderTests {
+    
+    class MockTableView: UITableView {
+        
+        var cellGotDequeue = false
+        
+        override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
+            
+            cellGotDequeue = true
+            return super.dequeueReusableCell(withIdentifier:identifier, for:indexPath)
+        }
+        
+    
+    }
+    
+    func test_CellForRow_DequeuesCellFromTableView() {
+        
+        let mockTableView = MockTableView()
+        mockTableView.dataSource = sut
+        mockTableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
+        sut.itemManager?.add(ToDoItem(title: "Foo"))
+        mockTableView.reloadData()
+        
+        _ = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(mockTableView.cellGotDequeue)
+    }
+}
+
+
+
+
+
+
+
+
+
+
