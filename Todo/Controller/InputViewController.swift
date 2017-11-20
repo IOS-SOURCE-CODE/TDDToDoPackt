@@ -54,8 +54,6 @@ class InputViewController: UIViewController {
         if let locationName = locationTextField.text, locationName.count > 0 {
             if let address = addressTextField.text, address.count > 0 {
                 
-                
-            
                 geocoder.geocodeAddressString(address) {
                     [unowned self] (placeMarks, error) -> Void in
                     
